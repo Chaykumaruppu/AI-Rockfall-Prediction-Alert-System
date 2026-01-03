@@ -1,50 +1,189 @@
-# AI-Based Rockfall Prediction & Alert System
+<div align="center">
 
-An end-to-end **temporal deep learning framework** for real-time rockfall risk prediction and alerting in open-pit mines.
+<h1 style="font-size:38px; font-weight:700;">
+🪨 AI-Based Rockfall Prediction & Alert System
+</h1>
 
-## 🔍 Problem Motivation
-Rockfall incidents in open-pit mines pose severe safety risks. Traditional monitoring systems rely on static thresholds and manual inspection, failing to capture the **temporal evolution of slope instability**.
+<p style="font-size:18px; max-width:900px;">
+An end-to-end <b>temporal deep learning framework</b> for real-time rockfall risk prediction, dynamic alerting, and decision support in open-pit mining environments.
+</p>
 
-## 🧠 Proposed Solution
-This project introduces a **temporal LSTM-based risk prediction system** that:
-- Models continuous risk evolution
-- Generates dynamic risk scores
-- Triggers SAFE / WATCH / ALERT states
-- Visualizes results through an interactive dashboard
+<p>
+<b>IEEE Research Project · Temporal AI · Safety-Critical Systems</b>
+</p>
 
-## 🗂 Dataset
-- Large-scale **synthetic temporal dataset**
-- 50,000+ time-indexed samples
-- 5 mine zones with distinct behavioral characteristics
-- Multi-sensor inputs (displacement, strain, vibration, rainfall, etc.)
+</div>
 
-## 🏗 System Architecture
-1. Continuous sensor data ingestion  
-2. Sliding-window temporal sequence generation  
-3. LSTM-based risk prediction  
-4. Dynamic risk scoring & persistence-based alerts  
-5. Real-time visualization via Gradio dashboard  
+<hr/>
 
-## 📊 Model Performance
+## 🚀 Project Overview
+
+Rockfalls and slope instabilities are among the most dangerous hazards in open-pit mining, often leading to severe accidents, equipment damage, and operational shutdowns.  
+Most existing monitoring systems rely on **static thresholds**, **manual inspection**, or **snapshot-based models**, making them ineffective for detecting **gradual and evolving instability patterns**.
+
+This project introduces a **temporal deep learning–driven safety intelligence system** that continuously monitors mine conditions, predicts future risk states, and generates **reliable early warnings** using an integrated AI pipeline.
+
+---
+
+## 🎯 Key Contributions
+
+<ul>
+<li>📊 <b>Large-scale synthetic temporal dataset</b> modeling realistic open-pit mine behavior across multiple zones</li>
+<li>🧠 <b>LSTM-based temporal risk prediction model</b> capturing long-term instability trends</li>
+<li>⚖️ <b>Dynamic risk scoring and persistence-aware alert logic</b> to reduce false alarms</li>
+<li>📈 <b>Interactive real-time dashboard</b> for operational decision support</li>
+<li>📄 <b>IEEE-style research paper</b> with quantitative validation against classical baselines</li>
+</ul>
+
+---
+
+## 🏗️ System Architecture
+
+<b>End-to-End Pipeline:</b>
+Sensor Data → Time Windowing → LSTM Model → Risk Scoring Engine
+        → Thresholding & Persistence Logic → Alerts → Dashboard
+
+
+The system is designed to be **modular, explainable, and deployable** in real-world mining environments.
+
+---
+
+## 📊 Dataset Design
+
+- **Type:** Synthetic temporal dataset
+- **Samples:** 50,000+ time-indexed records
+- **Zones:** 5 independent mine zones
+- **Sampling:** Continuous monitoring simulation
+
+### Monitored Features
+- Surface displacement  
+- Internal strain  
+- Pore water pressure  
+- Micro-seismic vibration  
+- Rainfall intensity  
+- Ambient temperature  
+
+### Target Variable
+- Continuous **Risk Index ∈ [0,1]**
+- Smooth transitions between:
+  - Normal
+  - Stressed
+  - Critical states
+
+---
+
+## 🧠 Model Details
+
+### Proposed Model
+- **Architecture:** LSTM → Dense Output
+- **Input:** Sliding temporal windows (30 timesteps)
+- **Loss:** Mean Squared Error (MSE)
+- **Optimizer:** Adam
+- **Regularization:** Early stopping
+
+### Baseline Models
 | Model | MAE ↓ | RMSE ↓ |
-|------|------|------|
+|------|------|-------|
 | Linear Regression | 0.0221 | 0.0278 |
 | Random Forest | 0.0310 | 0.0389 |
 | **LSTM (Proposed)** | **0.0190** | **0.0240** |
 
-## 🖥 Interactive Dashboard
+📌 Temporal modeling significantly outperforms static baselines.
+
+---
+
+## 🚨 Risk Scoring & Alert Logic
+
+The system converts raw predictions into actionable safety states:
+
+| State | Condition |
+|-----|----------|
+| 🟢 SAFE | Risk below baseline |
+| 🟡 WATCH | Rising risk trend |
+| 🔴 ALERT | Sustained high risk |
+
+✔ Alerts are triggered **only when risk persists over time**, preventing noise-induced false alarms.
+
+---
+
+## 🖥️ Interactive Dashboard
+
 The Gradio-based dashboard enables:
 - Zone-wise monitoring
-- Temporal risk visualization
-- Real-time alert interpretation
+- Real-time risk visualization
+- Rolling trend analysis
+- Live alert status updates
 
-*(Screenshot in `/assets`)*
+Designed as a **Safety Command Center** for operators and engineers.
+
+---
+
+## 📂 Repository Structure
+
+AI-Rockfall-Prediction-Alert-System/
+│
+├── app.py # Gradio dashboard application
+├── requirements.txt # Dependencies
+├── README.md # Project documentation
+│
+├── data/
+│ └── synthetic_rockfall_dataset.csv
+│
+├── notebooks/
+│ └── Rockfall_Prediction.ipynb
+│
+├── IEEE Paper/
+│ └── IEEE_Paper.pdf
+│
+└── presentation/
+└── Project_Presentation.pdf
+
+
+---
 
 ## 📄 Research Paper
-- IEEE conference-ready paper included  
-- Covers dataset design, methodology, evaluation, and deployment
 
-## 🚀 How to Run
-```bash
-pip install -r requirements.txt
-python app.py
+A complete **IEEE conference-ready paper** is included, covering:
+- Problem formulation
+- Dataset design
+- Methodology
+- Experimental validation
+- System deployment
+
+📌 Suitable for academic review and technical evaluation.
+
+---
+
+## 🔮 Limitations & Future Work
+
+- Incorporation of real sensor data
+- Multi-horizon forecasting
+- Transformer-based temporal models
+- Edge deployment on mine-site hardware
+- Integration with geotechnical simulation tools
+
+---
+
+## 👤 Author
+
+<b>Uppu Chaithanya Kumar</b>  
+Department of Computer Science & Engineering  
+Lovely Professional University  
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — free to use, modify, and build upon with attribution.
+
+---
+
+<div align="center">
+<b>If this project helped you, consider starring ⭐ the repository.</b>
+</div>
+
+
+
+
+        
+
